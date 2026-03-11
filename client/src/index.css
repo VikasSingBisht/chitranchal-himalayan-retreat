@@ -1,0 +1,28 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=DM+Sans:wght@300;400;500;600&display=swap');
+
+@theme {
+  /* 🎨 Himalayan Dusk Palette */
+  --color-primary: #1C2B3A;      /* Midnight Blue */
+  --color-accent: #E8A020;       /* Warm Gold */
+  --color-cream: #F9F6F0;        /* Warm Cream */
+  --color-darkbrown: #111820;    /* Deep Dark */
+  --color-softgreen: #2D4A3E;    /* Pine Green */
+  --color-saffron: #E8A020;      /* Same as accent */
+  --color-mist: #EEF2F7;         /* Mist Blue */
+
+  /* 🔤 Premium Fonts */
+  --font-playfair: "Fraunces", serif;
+  --font-inter: "DM Sans", sans-serif;
+}
+
+.animate-hidden {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.animate-visible {
+  opacity: 1;
+  transform: translateY(0);
+}

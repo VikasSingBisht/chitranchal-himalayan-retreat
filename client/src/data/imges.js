@@ -1,0 +1,1 @@
+import fool from "../bgImages/Images/fool.png"
