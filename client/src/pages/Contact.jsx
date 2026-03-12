@@ -39,25 +39,25 @@ const Contact = () => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setStatus("loading");
+ const handleSubmit = async (e) => {
+  e.preventDefault();
+  setStatus("loading");
 
-    try {
-      await axios.post("http://localhost:5000/api/contact", form);
+  try {
+    await axios.post("/api/sendEmail", form);
 
-      setStatus("success");
+    setStatus("success");
 
-      setForm({
-        name: "",
-        email: "",
-        phone: "",
-        message: "",
-      });
-    } catch (err) {
-      setStatus("error");
-    }
-  };
+    setForm({
+      name: "",
+      email: "",
+      phone: "",
+      message: "",
+    });
+  } catch (err) {
+    setStatus("error");
+  }
+};
 
   return (
     <div className="min-h-screen bg-cream">

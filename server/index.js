@@ -23,7 +23,7 @@ app.use("/api/chat", chatbotRoute);
 app.use("/api/contact", contactRoute);
 
 app.get("/", (req, res) => {
-  res.json({ message: "Chitranchal Server chal raha hai! 🏔️" });
+  res.json({ message: "Chitranchal Server is running" });
 });
 
 app.listen(PORT, () => {
