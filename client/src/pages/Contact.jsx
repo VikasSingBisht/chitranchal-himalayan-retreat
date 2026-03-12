@@ -39,22 +39,36 @@ const Contact = () => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
- const handleSubmit = async (e) => {
+const handleSubmit = async (e) => {
   e.preventDefault();
   setStatus("loading");
 
   try {
-    await axios.post("/api/sendEmail", form);
+    const response = await axios.post(
+      "/api/sendEmail",
+      form,
+      {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
 
-    setStatus("success");
+    if (response.data.success) {
+      setStatus("success");
 
-    setForm({
-      name: "",
-      email: "",
-      phone: "",
-      message: "",
-    });
+      setForm({
+        name: "",
+        email: "",
+        phone: "",
+        message: "",
+      });
+    } else {
+      setStatus("error");
+    }
+
   } catch (err) {
+    console.error("Email error:", err.response?.data || err.message);
     setStatus("error");
   }
 };
